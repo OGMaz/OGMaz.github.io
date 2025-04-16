@@ -6,14 +6,16 @@
   <title>Happy 2 Years Anniversary</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lottie-web@5.7.5/build/player/lottie.min.js"></script>
 </head>
 <body>
   <!-- Page 1: Landing -->
   <section id="intro" class="screen active">
     <h1 class="title">
       Happy 2 Years Anniversary
-      <img src="https://i.imgur.com/4M7IWwP.png" class="heart" />
-      <img src="https://i.imgur.com/4M7IWwP.png" class="heart" />
+      <!-- Lottie animation for the heart -->
+      <div id="heart-animation" class="heart"></div>
+      <div id="heart-animation2" class="heart"></div>
     </h1>
     <p class="intro-text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vel tincidunt tincidunt...
@@ -79,7 +81,22 @@
     <!-- You can add a custom thank you message here -->
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    var heartAnimation = lottie.loadAnimation({
+      container: document.getElementById('heart-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://lottie.host/95478e44-125d-446c-b77a-4c58a3629ed7/MKrPHaOs1i.lottie' // Your custom Lottie animation URL
+    });
+    var heartAnimation2 = lottie.loadAnimation({
+      container: document.getElementById('heart-animation2'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://lottie.host/95478e44-125d-446c-b77a-4c58a3629ed7/MKrPHaOs1i.lottie' // Your custom Lottie animation URL
+    });
+  </script>
+  
 </body>
 </html>
-
