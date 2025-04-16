@@ -1,190 +1,110 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive; /* Pixelated font */
+  image-rendering: pixelated; /* Ensures images are pixelated */
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy 2 Years Anniversary</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Press Start 2P', cursive;
-    }
+body {
+  background: #faf0f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center;
+  font-size: 14px; /* Smaller size to emphasize the pixelated look */
+}
 
-    body {
-      background: #faf0f5;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      text-align: center;
-    }
+.screen {
+  display: none;
+  padding: 40px 20px;
+}
 
-    .screen {
-      display: none;
-      padding: 40px 20px;
-    }
+.screen.active {
+  display: block;
+}
 
-    .screen.active {
-      display: block;
-    }
+.title {
+  font-size: 24px; /* Adjusted for a pixelated look */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
 
-    .title {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
+.heart {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  image-rendering: pixelated;
+}
 
-    .heart {
-      width: 24px;
-      height: 24px;
-      margin: 0 5px;
-      image-rendering: pixelated;
-    }
+.intro-text {
+  font-size: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  line-height: 1.5;
+}
 
-    .intro-text {
-      font-size: 12px;
-      max-width: 600px;
-      margin: 20px auto;
-      line-height: 1.5;
-    }
+.pixel-btn {
+  font-size: 12px;
+  padding: 10px 20px;
+  background: #ff9fda;
+  border: 4px solid #ff63c3;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 4px 4px #d94fa3;
+  margin-top: 20px;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Press Start 2P', cursive;
+  border-radius: 5px;
+}
 
-    .pixel-btn {
-      font-size: 12px;
-      padding: 10px 20px;
-      background: #ff9fda;
-      border: 4px solid #ff63c3;
-      color: #fff;
-      cursor: pointer;
-      text-transform: uppercase;
-      box-shadow: 4px 4px #d94fa3;
-      margin-top: 20px;
-      transition: all 0.2s ease-in-out;
-    }
+.pixel-btn:hover {
+  background: #ff63c3;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px #d94fa3;
+}
 
-    .pixel-btn:hover {
-      background: #ff63c3;
-      transform: translate(-2px, -2px);
-      box-shadow: 6px 6px #d94fa3;
-    }
+.choices-group {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
 
-    .choices-group {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
-    }
+.question {
+  width: 100%;
+  max-width: 800px;
+}
 
-    .question {
-      width: 100%;
-      max-width: 800px;
-    }
+.question h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
 
-    .question h3 {
-      margin-bottom: 10px;
-    }
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-    .options {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+.option {
+  border: 2px dashed #ccc;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: #fff0f6;
+  border-radius: 8px;
+  font-size: 12px;
+}
 
-    .option {
-      border: 2px dashed #ccc;
-      padding: 10px;
-      cursor: pointer;
-      transition: 0.2s ease;
-      background: #fff0f6;
-      border-radius: 8px;
-    }
+.option img {
+  width: 60px;
+  height: 60px;
+  margin-top: 5px;
+  image-rendering: pixelated;
+}
 
-    .option img {
-      width: 60px;
-      height: 60px;
-      margin-top: 5px;
-      image-rendering: pixelated;
-    }
-
-    .option.selected {
-      border: 3px solid #ff63c3;
-      background: #ffe0f0;
-    }
-  </style>
-</head>
-<body>
-  <!-- Page 1: Landing -->
-  <section id="intro" class="screen active">
-    <h1 class="title">
-      Happy 2 Years Anniversary
-      <img src="https://i.imgur.com/4M7IWwP.png" class="heart" />
-      <img src="https://i.imgur.com/4M7IWwP.png" class="heart" />
-    </h1>
-    <p class="intro-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vel tincidunt tincidunt...
-    </p>
-    <button id="enterBtn" class="pixel-btn">Enter</button>
-  </section>
-
-  <!-- Page 2: Customize Date -->
-  <section id="choices" class="screen">
-    <h2 class="title">Let's customize our date together</h2>
-
-    <div class="choices-group">
-      <!-- Meal -->
-      <div class="question">
-        <h3>Preferred Meal</h3>
-        <div class="options" data-group="meal">
-          <div class="option"><p>Homemade Pasta</p><img src="https://i.imgur.com/YOUR1.png" /></div>
-          <div class="option"><p>Noodles</p><img src="https://i.imgur.com/YOUR2.png" /></div>
-          <div class="option"><p>Sushi</p><img src="https://i.imgur.com/YOUR3.png" /></div>
-          <div class="option"><p>Tacos</p><img src="https://i.imgur.com/YOUR4.png" /></div>
-        </div>
-      </div>
-
-      <!-- Dessert -->
-      <div class="question">
-        <h3>Dessert</h3>
-        <div class="options" data-group="dessert">
-          <div class="option"><p>Ice Cream</p><img src="https://i.imgur.com/YOUR5.png" /></div>
-          <div class="option"><p>Biscuits</p><img src="https://i.imgur.com/YOUR6.png" /></div>
-          <div class="option"><p>Chocolate Cake</p><img src="https://i.imgur.com/YOUR7.png" /></div>
-          <div class="option"><p>Fruit Tart</p><img src="https://i.imgur.com/YOUR8.png" /></div>
-        </div>
-      </div>
-
-      <!-- Movie -->
-      <div class="question">
-        <h3>Movie</h3>
-        <div class="options" data-group="movie">
-          <div class="option"><p>My Neighbor Totoro</p><img src="https://i.imgur.com/YOUR9.png" /></div>
-          <div class="option"><p>Spirited Away</p><img src="https://i.imgur.com/YOUR10.png" /></div>
-          <div class="option"><p>Love Actually</p><img src="https://i.imgur.com/YOUR11.png" /></div>
-          <div class="option"><p>About Time</p><img src="https://i.imgur.com/YOUR12.png" /></div>
-        </div>
-      </div>
-
-      <!-- Games -->
-      <div class="question">
-        <h3>Games</h3>
-        <div class="options" data-group="games">
-          <div class="option"><p>R.E.P.O</p><img src="https://i.imgur.com/YOUR13.png" /></div>
-          <div class="option"><p>Minecraft</p><img src="https://i.imgur.com/YOUR14.png" /></div>
-          <div class="option"><p>Skribbl</p><img src="https://i.imgur.com/YOUR15.png" /></div>
-          <div class="option"><p>It Takes Two</p><img src="https://i.imgur.com/YOUR16.png" /></div>
-        </div>
-      </div>
-    </div>
-
-    <button id="submitChoices" class="pixel-btn">Enter</button>
-  </section>
-
-  <!-- Page 3: Final -->
-  <section id="thankyou" class="screen">
-    <!-- You can add a custom thank you message here -->
-  </section>
-
-  <script src="script.js"></script>
-</body>
-</html>
+.option.selected {
+  border: 3px solid #ff63c3;
+  background: #ffe0f0;
+}
