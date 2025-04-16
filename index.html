@@ -3,40 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixel Love Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Happy 2 Years Anniversary</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div id="intro" class="screen active">
-    <h1 class="title">Hey cutie 💖</h1>
-    <button id="enterBtn">Enter</button>
-  </div>
+  <!-- Page 1: Landing -->
+  <section id="intro" class="screen active">
+    <h1 class="title">
+      Happy 2 Years Anniversary
+      <img src="https://i.imgur.com/4M7IWwP.png" class="heart" />
+      <img src="https://i.imgur.com/4M7IWwP.png" class="heart" />
+    </h1>
+    <p class="intro-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vel tincidunt tincidunt...
+    </p>
+    <button id="enterBtn" class="pixel-btn">Enter</button>
+  </section>
 
-  <div id="choices" class="screen">
-    <h2>Pick your faves 💫</h2>
+  <!-- Page 2: Customize Date -->
+  <section id="choices" class="screen">
+    <h2 class="title">Let's customize our date together</h2>
+
     <div class="choices-group">
+      <!-- Meal -->
       <div class="question">
-        <p>🍰 Favorite Dessert:</p>
-        <button class="choice">Cake</button>
-        <button class="choice">Ice Cream</button>
-        <button class="choice">Donuts</button>
+        <h3>Preferred Meal</h3>
+        <div class="options" data-group="meal">
+          <div class="option"><p>Homemade Pasta</p><img src="https://i.imgur.com/YOUR1.png" /></div>
+          <div class="option"><p>Noodles</p><img src="https://i.imgur.com/YOUR2.png" /></div>
+          <div class="option"><p>Sushi</p><img src="https://i.imgur.com/YOUR3.png" /></div>
+          <div class="option"><p>Tacos</p><img src="https://i.imgur.com/YOUR4.png" /></div>
+        </div>
       </div>
+
+      <!-- Dessert -->
       <div class="question">
-        <p>🎮 What to do on our date:</p>
-        <button class="choice">Play games</button>
-        <button class="choice">Watch movies</button>
-        <button class="choice">Go for a walk</button>
+        <h3>Dessert</h3>
+        <div class="options" data-group="dessert">
+          <div class="option"><p>Ice Cream</p><img src="https://i.imgur.com/YOUR5.png" /></div>
+          <div class="option"><p>Biscuits</p><img src="https://i.imgur.com/YOUR6.png" /></div>
+          <div class="option"><p>Chocolate Cake</p><img src="https://i.imgur.com/YOUR7.png" /></div>
+          <div class="option"><p>Fruit Tart</p><img src="https://i.imgur.com/YOUR8.png" /></div>
+        </div>
+      </div>
+
+      <!-- Movie -->
+      <div class="question">
+        <h3>Movie</h3>
+        <div class="options" data-group="movie">
+          <div class="option"><p>My Neighbor Totoro</p><img src="https://i.imgur.com/YOUR9.png" /></div>
+          <div class="option"><p>Spirited Away</p><img src="https://i.imgur.com/YOUR10.png" /></div>
+          <div class="option"><p>Love Actually</p><img src="https://i.imgur.com/YOUR11.png" /></div>
+          <div class="option"><p>About Time</p><img src="https://i.imgur.com/YOUR12.png" /></div>
+        </div>
+      </div>
+
+      <!-- Games -->
+      <div class="question">
+        <h3>Games</h3>
+        <div class="options" data-group="games">
+          <div class="option"><p>R.E.P.O</p><img src="https://i.imgur.com/YOUR13.png" /></div>
+          <div class="option"><p>Minecraft</p><img src="https://i.imgur.com/YOUR14.png" /></div>
+          <div class="option"><p>Skribbl</p><img src="https://i.imgur.com/YOUR15.png" /></div>
+          <div class="option"><p>It Takes Two</p><img src="https://i.imgur.com/YOUR16.png" /></div>
+        </div>
       </div>
     </div>
-    <button id="submitChoices">Done!</button>
-  </div>
 
-  <div id="thankyou" class="screen">
-    <h1>Thanks for playing 💕</h1>
-    <p>You’re adorable, just sayin'.</p>
-  </div>
+    <button id="submitChoices" class="pixel-btn">Enter</button>
+  </section>
+
+  <!-- Page 3: Final -->
+  <section id="thankyou" class="screen">
+    <!-- You can add a custom thank you message here -->
+  </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+
