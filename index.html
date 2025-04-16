@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lottie-web@5.7.5/build/player/lottie.min.js"></script>
+  <style>
+    /* Add custom styles if needed */
+  </style>
 </head>
 <body>
   <!-- Page 1: Landing -->
@@ -82,6 +85,31 @@
   </section>
 
   <script>
+    // Handle page transitions
+    const enterBtn = document.getElementById('enterBtn');
+    const submitChoices = document.getElementById('submitChoices');
+    const screens = document.querySelectorAll('.screen');
+
+    // Function to show the next screen and hide the current one
+    function showNextScreen(currentScreenId, nextScreenId) {
+      const currentScreen = document.getElementById(currentScreenId);
+      const nextScreen = document.getElementById(nextScreenId);
+      
+      currentScreen.classList.remove('active');
+      nextScreen.classList.add('active');
+    }
+
+    // Event listener for the first "Enter" button
+    enterBtn.addEventListener('click', () => {
+      showNextScreen('intro', 'choices');
+    });
+
+    // Event listener for the second "Enter" button
+    submitChoices.addEventListener('click', () => {
+      showNextScreen('choices', 'thankyou');
+    });
+
+    // Lottie animations
     var heartAnimation = lottie.loadAnimation({
       container: document.getElementById('heart-animation'),
       renderer: 'svg',
