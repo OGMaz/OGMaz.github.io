@@ -1,46 +1,42 @@
 // script.js
 
-// Switch to choices page
-const enterBtn = document.getElementById("enterBtn");
-const submitChoices = document.getElementById("submitChoices");
-const screens = document.querySelectorAll(".screen");
+// Selections store
+const selections = {
+  lunch: null,
+  dessert: null,
+  movie: null,
+  game: null
+};
 
-enterBtn.addEventListener("click", () => {
-  screens[0].classList.remove("active");
-  screens[1].classList.add("active");
-});
+function updateSelection(category, value) {
+  selections[category] = value;
+}
 
-submitChoices.addEventListener("click", () => {
-  // Gather selections
-  const selections = {};
-  document.querySelectorAll(".options").forEach(group => {
-    const selected = group.querySelector(".option.selected");
-    if (selected) {
-      const category = group.getAttribute("data-group");
-      const value = selected.innerText.trim();
-      selections[category] = value;
-    }
+function goToScreen(screenId) {
+  const screens = document.querySelectorAll('.screen');
+  screens.forEach(screen => screen.style.display = 'none');
+  document.getElementById(screenId).style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('enter-btn').addEventListener('click', () => {
+    goToScreen('selection-screen');
   });
 
-  console.log("User Selections:", selections);
-  // You could send this to a webhook or store in localStorage if needed
+  document.getElementById('submit-btn').addEventListener('click', () => {
+    goToScreen('final-screen');
+    console.log('User Selections:', selections);
+    // optionally send selections via form, webhook, or backend
+  });
 
-  // Show thank you page
-  screens[1].classList.remove("active");
-  screens[2].classList.add("active");
-  screens[2].innerHTML = `
-    <h2>Thank you for customizing our date! 💖</h2>
-    <p>Can't wait to enjoy everything with you 😚</p>
-  `;
-});
-
-// Only allow one selected option per group
-const allOptionGroups = document.querySelectorAll(".options");
-allOptionGroups.forEach(group => {
-  group.querySelectorAll(".option").forEach(option => {
-    option.addEventListener("click", () => {
-      group.querySelectorAll(".option").forEach(opt => opt.classList.remove("selected"));
-      option.classList.add("selected");
+  document.querySelectorAll('[data-category]').forEach(choice => {
+    choice.addEventListener('click', () => {
+      const category = choice.getAttribute('data-category');
+      const value = choice.getAttribute('data-value');
+      updateSelection(category, value);
+      // optional: highlight selected
+      document.querySelectorAll(`[data-category="${category}"]`).forEach(el => el.classList.remove('selected'));
+      choice.classList.add('selected');
     });
   });
 });
