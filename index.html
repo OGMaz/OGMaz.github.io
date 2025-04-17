@@ -3,128 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy 2 Years Anniversary</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Happy Anniversary</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lottie-web@5.7.5/build/player/lottie.min.js"></script>
   <style>
-    /* Add custom styles if needed */
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background-color: #ffefff;
+      color: #3a3a3a;
+    }
+    .screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .screen.active {
+      display: flex;
+    }
+    .pixel-heart {
+      width: 32px;
+      height: 32px;
+      margin: 0 0.5rem;
+    }
+    .pixel-button {
+      background: #ff69b4;
+      color: white;
+      padding: 1rem 2rem;
+      margin-top: 2rem;
+      font-size: 1rem;
+      border: 4px solid #3a3a3a;
+      box-shadow: 4px 4px 0 #3a3a3a;
+      cursor: pointer;
+    }
+    .pixel-button:hover {
+      background: #ff85c1;
+    }
+    .choice-section {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+    .choice-section h3 {
+      margin-bottom: 0.5rem;
+    }
+    .choice-section p {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .options {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .option {
+      cursor: pointer;
+      padding: 0.5rem;
+      border: 3px solid transparent;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+    .option img {
+      width: 120px;
+      height: 120px;
+      border: 4px solid #3a3a3a;
+      image-rendering: pixelated;
+    }
+    .option.selected {
+      border: 3px solid #ff69b4;
+    }
   </style>
 </head>
 <body>
-  <!-- Page 1: Landing -->
-  <section id="intro" class="screen active">
-    <h1 class="title">
+  <div class="screen active">
+    <h1>
       Happy 2 Years Anniversary
-      <!-- Lottie animation for the heart -->
-      <div id="heart-animation" class="heart"></div>
-      <div id="heart-animation2" class="heart"></div>
+      <img class="pixel-heart" src="https://i.imgur.com/1X0f1Wg.png" />
+      <img class="pixel-heart" src="https://i.imgur.com/1X0f1Wg.png" />
     </h1>
-    <p class="intro-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vel tincidunt tincidunt...
-    </p>
-    <button id="enterBtn" class="pixel-btn">Enter</button>
-  </section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod magna sed pulvinar eleifend...</p>
+    <button class="pixel-button" id="enterBtn">Enter</button>
+  </div>
 
-  <!-- Page 2: Customize Date -->
-  <section id="choices" class="screen">
-    <h2 class="title">Let's customize our date together</h2>
+  <div class="screen">
+    <h2>Let's customize our date together 💌</h2>
 
-    <div class="choices-group">
-      <!-- Meal -->
-      <div class="question">
-        <h3>Preferred Meal</h3>
-        <div class="options" data-group="meal">
-          <div class="option"><p>Homemade Pasta</p><img src="https://i.imgur.com/YOUR1.png" /></div>
-          <div class="option"><p>Noodles</p><img src="https://img.freepik.com/premium-vector/delicious-noodle-pixel-art-vector_510129-24.jpg?w=740" /></div>
-          <div class="option"><p>Sushi</p><img src="https://i.imgur.com/YOUR3.png" /></div>
-          <div class="option"><p>Tacos</p><img src="https://i.imgur.com/YOUR4.png" /></div>
-        </div>
-      </div>
-
-      <!-- Dessert -->
-      <div class="question">
-        <h3>Dessert</h3>
-        <div class="options" data-group="dessert">
-          <div class="option"><p>Ice Cream</p><img src="https://i.imgur.com/YOUR5.png" /></div>
-          <div class="option"><p>Biscuits</p><img src="https://i.imgur.com/YOUR6.png" /></div>
-          <div class="option"><p>Chocolate Cake</p><img src="https://i.imgur.com/YOUR7.png" /></div>
-          <div class="option"><p>Fruit Tart</p><img src="https://i.imgur.com/YOUR8.png" /></div>
-        </div>
-      </div>
-
-      <!-- Movie -->
-      <div class="question">
-        <h3>Movie</h3>
-        <div class="options" data-group="movie">
-          <div class="option"><p>My Neighbor Totoro</p><img src="https://i.imgur.com/YOUR9.png" /></div>
-          <div class="option"><p>Spirited Away</p><img src="https://i.imgur.com/YOUR10.png" /></div>
-          <div class="option"><p>Love Actually</p><img src="https://i.imgur.com/YOUR11.png" /></div>
-          <div class="option"><p>About Time</p><img src="https://i.imgur.com/YOUR12.png" /></div>
-        </div>
-      </div>
-
-      <!-- Games -->
-      <div class="question">
-        <h3>Games</h3>
-        <div class="options" data-group="games">
-          <div class="option"><p>R.E.P.O</p><img src="https://i.imgur.com/YOUR13.png" /></div>
-          <div class="option"><p>Minecraft</p><img src="https://i.imgur.com/YOUR14.png" /></div>
-          <div class="option"><p>Skribbl</p><img src="https://i.imgur.com/YOUR15.png" /></div>
-          <div class="option"><p>It Takes Two</p><img src="https://i.imgur.com/YOUR16.png" /></div>
-        </div>
+    <div class="choice-section">
+      <h3>Preferred Meal</h3>
+      <p>Pick what you’d like to eat together 🍝</p>
+      <div class="options" data-group="meal">
+        <div class="option"><img src="https://i.imgur.com/Fake1.png" alt="Homemade Pasta" /><div>Homemade Pasta</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake2.png" alt="Noodles" /><div>Noodles</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake3.png" alt="Sushi" /><div>Sushi</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake4.png" alt="Pizza" /><div>Pizza</div></div>
       </div>
     </div>
 
-    <button id="submitChoices" class="pixel-btn">Enter</button>
-  </section>
+    <div class="choice-section">
+      <h3>Dessert</h3>
+      <p>Choose a sweet treat for our special day 🍰</p>
+      <div class="options" data-group="dessert">
+        <div class="option"><img src="https://i.imgur.com/Fake5.png" alt="Ice Cream" /><div>Ice Cream</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake6.png" alt="Biscuits" /><div>Biscuits</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake7.png" alt="Cake" /><div>Cake</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake8.png" alt="Donut" /><div>Donut</div></div>
+      </div>
+    </div>
 
-  <!-- Page 3: Final -->
-  <section id="thankyou" class="screen">
-    <!-- You can add a custom thank you message here -->
-  </section>
+    <div class="choice-section">
+      <h3>Movie</h3>
+      <p>Pick a movie to watch together under cozy blankets 🎬</p>
+      <div class="options" data-group="movie">
+        <div class="option"><img src="https://i.imgur.com/Fake9.png" alt="Totoro" /><div>My Neighbor Totoro</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake10.png" alt="Spirited Away" /><div>Spirited Away</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake11.png" alt="Love Actually" /><div>Love Actually</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake12.png" alt="About Time" /><div>About Time</div></div>
+      </div>
+    </div>
 
-  <script>
-    // Handle page transitions
-    const enterBtn = document.getElementById('enterBtn');
-    const submitChoices = document.getElementById('submitChoices');
-    const screens = document.querySelectorAll('.screen');
+    <div class="choice-section">
+      <h3>Games</h3>
+      <p>Choose a fun game to play together 🎮</p>
+      <div class="options" data-group="game">
+        <div class="option"><img src="https://i.imgur.com/Fake13.png" alt="REPO" /><div>R.E.P.O</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake14.png" alt="Minecraft" /><div>Minecraft</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake15.png" alt="Skribbl" /><div>Skribbl</div></div>
+        <div class="option"><img src="https://i.imgur.com/Fake16.png" alt="Mario Kart" /><div>Mario Kart</div></div>
+      </div>
+    </div>
 
-    // Function to show the next screen and hide the current one
-    function showNextScreen(currentScreenId, nextScreenId) {
-      const currentScreen = document.getElementById(currentScreenId);
-      const nextScreen = document.getElementById(nextScreenId);
-      
-      currentScreen.classList.remove('active');
-      nextScreen.classList.add('active');
-    }
+    <button class="pixel-button" id="submitChoices">Enter</button>
+  </div>
 
-    // Event listener for the first "Enter" button
-    enterBtn.addEventListener('click', () => {
-      showNextScreen('intro', 'choices');
-    });
+  <div class="screen"></div>
 
-    // Event listener for the second "Enter" button
-    submitChoices.addEventListener('click', () => {
-      showNextScreen('choices', 'thankyou');
-    });
-
-    // Lottie animations
-    var heartAnimation = lottie.loadAnimation({
-      container: document.getElementById('heart-animation'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://lottie.host/95478e44-125d-446c-b77a-4c58a3629ed7/MKrPHaOs1i.lottie' // Your custom Lottie animation URL
-    });
-    var heartAnimation2 = lottie.loadAnimation({
-      container: document.getElementById('heart-animation2'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://lottie.host/95478e44-125d-446c-b77a-4c58a3629ed7/MKrPHaOs1i.lottie' // Your custom Lottie animation URL
-    });
-  </script>
-  
+  <script src="script.js"></script>
 </body>
 </html>
