@@ -1,146 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Anniversary</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Press Start 2P', cursive;
-      background-color: #ffdede;
-      color: #3a3a3a;
-    }
-    .screen {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-    }
-    .screen.active {
-      display: flex;
-    }
-    .pixel-heart {
-      width: 32px;
-      height: 32px;
-      margin: 0 0.5rem;
-    }
-    .pixel-button {
-      background: #ff69b4;
-      color: white;
-      padding: 1rem 2rem;
-      margin-top: 2rem;
-      font-size: 1rem;
-      border: 4px solid #3a3a3a;
-      box-shadow: 4px 4px 0 #3a3a3a;
-      cursor: pointer;
-    }
-    .pixel-button:hover {
-      background: #ff85c1;
-    }
-    .choice-section {
-      width: 100%;
-      max-width: 800px;
-      margin-bottom: 2rem;
-    }
-    .choice-section h3 {
-      margin-bottom: 0.5rem;
-    }
-    .choice-section p {
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-    .options {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .option {
-      cursor: pointer;
-      padding: 0.5rem;
-      border: 3px solid transparent;
-      border-radius: 8px;
-      transition: 0.2s;
-    }
-    .option img {
-      width: 120px;
-      height: 120px;
-      border: 4px solid #3a3a3a;
-      image-rendering: pixelated;
-    }
-    .option.selected {
-      border: 3px solid #ff69b4;
-    }
-  </style>
-</head>
-<body>
-  <div class="screen active">
-    <h1>
-      Happy 2 Years Anniversary
-      <img class="pixel-heart" src="https://i.imgur.com/1X0f1Wg.png" />
-      <img class="pixel-heart" src="https://i.imgur.com/1X0f1Wg.png" />
-    </h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod magna sed pulvinar eleifend...</p>
-    <button class="pixel-button" id="enterBtn">Enter</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 2 Years Anniversary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Press Start 2P', cursive;
+        background-color: #ffebf0;
+        color: #2d2d2d;
+        text-align: center;
+      }
+      .container {
+        padding: 2rem;
+      }
+      .pixel-heart {
+        width: 40px;
+        height: 40px;
+        image-rendering: pixelated;
+        vertical-align: middle;
+        animation: beat 1s infinite;
+      }
+      @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+      }
+      .pixel-btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        background: #ff0055;
+        color: white;
+        border: 4px solid black;
+        text-decoration: none;
+        font-size: 1rem;
+        box-shadow: 4px 4px 0px black;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+      }
+      .pixel-btn:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px black;
+      }
+      .hidden { display: none; }
+      .section-title {
+        font-size: 1.25rem;
+        margin-top: 2rem;
+      }
+      .section-desc {
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .option {
+        width: 120px;
+        height: 120px;
+        background-color: #fff;
+        border: 4px solid black;
+        padding: 0.5rem;
+        cursor: pointer;
+        image-rendering: pixelated;
+        transition: transform 0.1s ease-in-out;
+      }
+      .option img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border: 2px solid black;
+      }
+      .option.selected {
+        background-color: #ffd6ec;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="screen1">
+      <h1>
+        Happy 2 Years Anniversary
+        <img src="https://i.imgur.com/jRxM7rA.gif" alt="heart" class="pixel-heart" />
+        <img src="https://i.imgur.com/jRxM7rA.gif" alt="heart" class="pixel-heart" />
+      </h1>
+      <p style="max-width: 700px; margin: 1rem auto; font-size: 0.8rem;">
+        Celebrating our anniversary would have been so much easier if distance weren’t an issue, but we’ve never let that stop us before. And even though I’m as broke as can be right now (Much like my girlfriend sometimes, my bank account’s giving me the silent treatment right now), I wanted to make this day meaningful in a special way. So instead of buying something, I decided to create something just for you—something out of the box to make this year memorable.<br><br>
 
-  <div class="screen">
-    <h2>Let's customize our date together 💌</h2>
+        My original plan was to use the last of my money to get you flowers and plan a nice dinner, because what’s an anniversary without flowers? But as much as I’d happily spend every last penny on you, I also knew it wouldn’t be a good idea if it meant going without food for the next two weeks. So, I was stuck—until I remembered a video I saw a while back about a guy who programmed a website to ask his girlfriend to be his Valentine’s. And I thought… maybe that’s it. Now, baby, let’s be real—I am no IT expert, but I do know me a little programming, and I figured this could be the perfect idea.<br><br>
 
-    <div class="choice-section">
-      <h3>Preferred Meal</h3>
-      <p>Pick what you’d like to eat together 🍝</p>
-      <div class="options" data-group="meal">
-        <div class="option"><img src="https://i.imgur.com/Fake1.png" alt="Homemade Pasta" /><div>Homemade Pasta</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake2.png" alt="Noodles" /><div>Noodles</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake3.png" alt="Sushi" /><div>Sushi</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake4.png" alt="Pizza" /><div>Pizza</div></div>
-      </div>
+        Once the idea was there, all that was left was making it happen. For the past two weeks, I’ve been working on this project nonstop. And because I’m a perfectionist when it comes to you 😏, I wanted every little detail to be just right, which, of course, meant even more time and effort. But honestly? Doing this for you made all the work feel like fun. I just hope you can see how much thought and love I’ve put into this, even if I couldn’t get you a physical gift this year. You know, one of my biggest love languages is giving you things, and it really hurts that I couldn’t do that the way I wanted to. But I hope this shows you just how much you mean to me.
+      </p>
+      <p><strong>Yours, always</strong></p>
+      <button class="pixel-btn" onclick="goToSecondScreen()">Enter</button>
     </div>
 
-    <div class="choice-section">
-      <h3>Dessert</h3>
-      <p>Choose a sweet treat for our special day 🍰</p>
-      <div class="options" data-group="dessert">
-        <div class="option"><img src="https://i.imgur.com/Fake5.png" alt="Ice Cream" /><div>Ice Cream</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake6.png" alt="Biscuits" /><div>Biscuits</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake7.png" alt="Cake" /><div>Cake</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake8.png" alt="Donut" /><div>Donut</div></div>
+    <div class="container hidden" id="screen2">
+      <h2>Let's Customize Our Date Together</h2>
+      <div>
+        <div class="section-title">Lunch Picks</div>
+        <div class="section-desc">I may not physically be there to cook these for you, but let this be the next best thing</div>
+        <div class="options" id="meal-options"></div>
+
+        <div class="section-title">Sweet Treats</div>
+        <div class="section-desc">I may not be there to feed you dessert, but let this be my sugary promise</div>
+        <div class="options" id="dessert-options"></div>
+
+        <div class="section-title">Watch List</div>
+        <div class="section-desc">I may not be there to hit ‘play’ for you, but pick a film, and let’s pretend I’m right there</div>
+        <div class="options" id="movie-options"></div>
+
+        <div class="section-title">Game Night</div>
+        <div class="section-desc">I may not be there to properly 'distract' you, but pick a game and let's have fun</div>
+        <div class="options" id="game-options"></div>
       </div>
+      <button class="pixel-btn" onclick="goToThirdScreen()">Submit</button>
     </div>
 
-    <div class="choice-section">
-      <h3>Movie</h3>
-      <p>Pick a movie to watch together under cozy blankets 🎬</p>
-      <div class="options" data-group="movie">
-        <div class="option"><img src="https://i.imgur.com/Fake9.png" alt="Totoro" /><div>My Neighbor Totoro</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake10.png" alt="Spirited Away" /><div>Spirited Away</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake11.png" alt="Love Actually" /><div>Love Actually</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake12.png" alt="About Time" /><div>About Time</div></div>
-      </div>
+    <div class="container hidden" id="screen3">
+      <h2>Thank You for Your Help in Perfecting Our Little Anniversary Date</h2>
+      <p style="margin-top: 1rem;">
+        Performance review complete:
+        <img src="https://i.imgur.com/4J2Y94v.gif" alt="flame" class="pixel-heart" />
+        ‘Absout Wifey Material’ status confirmed.
+        <img src="https://i.imgur.com/4J2Y94v.gif" alt="flame" class="pixel-heart" />
+        <br />Reward: hand-touch privileges (claim upon physical contact).
+      </p>
     </div>
 
-    <div class="choice-section">
-      <h3>Games</h3>
-      <p>Choose a fun game to play together 🎮</p>
-      <div class="options" data-group="game">
-        <div class="option"><img src="https://i.imgur.com/Fake13.png" alt="REPO" /><div>R.E.P.O</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake14.png" alt="Minecraft" /><div>Minecraft</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake15.png" alt="Skribbl" /><div>Skribbl</div></div>
-        <div class="option"><img src="https://i.imgur.com/Fake16.png" alt="Mario Kart" /><div>Mario Kart</div></div>
-      </div>
-    </div>
+    <script>
+      const options = {
+        meal: [
+          { name: 'Pasta', img: 'https://imgur.com/VB12aIB.png' },
+          { name: 'Pizza', img: 'https://imgur.com/GfqVAxW.png' },
+          { name: 'Noodles', img: 'https://imgur.com/Y5JXJws.png' },
+          { name: 'Whatever Available', img: 'https://imgur.com/UsRQNuv.png' },
+        ],
+        dessert: [
+          { name: 'Chips', img: 'https://imgur.com/AhRhgWQ.png' },
+          { name: 'Biscuits', img: 'https://imgur.com/DiMKtTZ.png' },
+          { name: 'Candy', img: 'https://imgur.com/iFuIhyX.png' },
+          { name: 'Me?', img: 'https://imgur.com/Dbhw0WM.png' },
+        ],
+        movie: [
+          { name: 'Totoro', img: 'https://imgur.com/X8pps6k.png' },
+          { name: 'Spirited Away', img: 'https://imgur.com/7yeUyq7.png' },
+          { name: 'Love Actually', img: 'https://imgur.com/imnrTap.png' },
+          { name: 'About Time', img: 'https://imgur.com/vq9TqHL.png' },
+        ],
+        game: [
+          { name: 'R.E.P.O', img: 'https://i.imgur.com/3amvAKX.png' },
+          { name: 'Minecraft', img: 'https://i.imgur.com/3amvAKX.png' },
+          { name: 'Skribbl', img: 'https://imgur.com/4C72s6r.png' },
+          { name: 'It Takes Two', img: 'https://i.imgur.com/3amvAKX.png' },
+        ]
+      };
 
-    <button class="pixel-button" id="submitChoices">Enter</button>
-  </div>
+      function createOptions(category, containerId) {
+        const container = document.getElementById(containerId);
+        options[category].forEach(opt => {
+          const div = document.createElement('div');
+          div.className = 'option';
+          div.innerHTML = `<img src="${opt.img}" alt="${opt.name}" title="${opt.name}" />`;
+          div.onclick = () => {
+            [...container.children].forEach(child => child.classList.remove('selected'));
+            div.classList.add('selected');
+          };
+          container.appendChild(div);
+        });
+      }
 
-  <div class="screen"></div>
+      function goToSecondScreen() {
+        document.getElementById('screen1').classList.add('hidden');
+        document.getElementById('screen2').classList.remove('hidden');
+        createOptions('meal', 'meal-options');
+        createOptions('dessert', 'dessert-options');
+        createOptions('movie', 'movie-options');
+        createOptions('game', 'game-options');
+      }
 
-  <script src="script.js"></script>
-</body>
+      function goToThirdScreen() {
+        document.getElementById('screen2').classList.add('hidden');
+        document.getElementById('screen3').classList.remove('hidden');
+      }
+    </script>
+  </body>
 </html>
