@@ -1,84 +1,67 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const startBtn = document.getElementById('start-btn');
-  const submitBtn = document.getElementById('submit-btn');
-  const landingScreen = document.getElementById('landing-screen');
-  const selectionScreen = document.getElementById('selection-screen');
-  const thankyouScreen = document.getElementById('thankyou-screen');
+document.getElementById("start-btn").addEventListener("click", () => {
+  document.getElementById("landing-screen").style.display = "none";
+  document.getElementById("selection-screen").style.display = "block";
+});
 
-  const mealOptions = [
-    { name: "Pasta", img: "https://imgur.com/VB12aIB.png" },
-    { name: "Pizza", img: "https://imgur.com/GfqVAxW.png" },
-    { name: "Noodles", img: "https://imgur.com/Y5JXJws.png" },
-    { name: "Whatever Available", img: "https://imgur.com/UsRQNuv.png" }
-  ];
+document.getElementById("submit-btn").addEventListener("click", () => {
+  document.getElementById("selection-screen").style.display = "none";
+  document.getElementById("thankyou-screen").style.display = "block";
+});
 
-  const dessertOptions = [
-    { name: "Chips", img: "https://imgur.com/AhRhgWQ.png" },
-    { name: "Biscuits", img: "https://imgur.com/DiMKtTZ.png" },
-    { name: "Candy", img: "https://imgur.com/iFuIhyX.png" },
-    { name: "Me?", img: "https://imgur.com/Dbhw0WM.png" }
-  ];
+const choices = {
+  "meal-choices": [
+    { title: "Pasta", image: "https://imgur.com/VB12aIB.png" },
+    { title: "Pizza", image: "https://imgur.com/GfqVAxW.png" },
+    { title: "Noodles", image: "https://imgur.com/Y5JXJws.png" },
+    { title: "Whatever Available", image: "https://imgur.com/UsRQNuv.png" }
+  ],
+  "dessert-choices": [
+    { title: "Chips", image: "https://imgur.com/AhRhgWQ.png" },
+    { title: "Biscuits", image: "https://imgur.com/DiMKtTZ.png" },
+    { title: "Candy", image: "https://imgur.com/iFuIhyX.png" },
+    { title: "Me?", image: "https://imgur.com/Dbhw0WM.png" }
+  ],
+  "movie-choices": [
+    { title: "My Neighbor Totoro", image: "https://imgur.com/X8pps6k.png" },
+    { title: "Spirited Away", image: "https://imgur.com/7yeUyq7.png" },
+    { title: "Love Actually", image: "https://imgur.com/imnrTap.png" },
+    { title: "About Time", image: "https://imgur.com/vq9TqHL.png" }
+  ],
+  "game-choices": [
+    { title: "R.O.P.O.", image: "https://imgur.com/undefined.png" },
+    { title: "Minecraft", image: "https://i.imgur.com/3amvAKX.png" },
+    { title: "Skribbl", image: "https://imgur.com/4C72s6r.png" },
+    { title: "It Takes Two", image: "https://imgur.com/undefined.png" }
+  ]
+};
 
-  const movieOptions = [
-    { name: "My Neighbor Totoro", img: "https://imgur.com/X8pps6k.png" },
-    { name: "Spirited Away", img: "https://imgur.com/7yeUyq7.png" },
-    { name: "Love Actually", img: "https://imgur.com/imnrTap.png" },
-    { name: "About Time", img: "https://imgur.com/vq9TqHL.png" }
-  ];
+function createChoiceElement(title, imageUrl) {
+  const container = document.createElement("div");
+  container.classList.add("choice");
 
-  const gameOptions = [
-    { name: "R.O.P.O.", img: "https://imgur.com/undefined.png" },
-    { name: "Minecraft", img: "https://i.imgur.com/3amvAKX.png" },
-    { name: "Skribbl", img: "https://imgur.com/4C72s6r.png" },
-    { name: "It Takes Two", img: "https://imgur.com/undefined.png" }
-  ];
+  const img = document.createElement("img");
+  img.src = imageUrl;
+  img.alt = title;
+  img.classList.add("choice-image");
 
-  function renderOptions(containerId, options) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = "";
+  const label = document.createElement("p");
+  label.textContent = title;
+  label.classList.add("choice-label");
 
-    options.forEach(opt => {
-      const div = document.createElement("div");
-      div.className = "choice";
-      div.innerHTML = `
-        <img src="${opt.img}" alt="${opt.name}" />
-        <p>${opt.name}</p>
-      `;
+  container.appendChild(img);
+  container.appendChild(label);
 
-      div.addEventListener("click", () => {
-        container.querySelectorAll(".choice").forEach(c => c.classList.remove("selected"));
-        div.classList.add("selected");
-      });
-
-      container.appendChild(div);
-    });
-  }
-
-  startBtn.addEventListener('click', () => {
-    landingScreen.style.display = "none";
-    selectionScreen.style.display = "block";
-    renderOptions("meal-choices", mealOptions);
-    renderOptions("dessert-choices", dessertOptions);
-    renderOptions("movie-choices", movieOptions);
-    renderOptions("game-choices", gameOptions);
+  container.addEventListener("click", () => {
+    container.classList.toggle("selected");
   });
 
-  submitBtn.addEventListener('click', () => {
-    const getSelected = (id) => {
-      const selected = document.querySelector(`#${id} .selected p`);
-      return selected ? selected.textContent : "None";
-    };
+  return container;
+}
 
-    const choices = {
-      meal: getSelected("meal-choices"),
-      dessert: getSelected("dessert-choices"),
-      movie: getSelected("movie-choices"),
-      game: getSelected("game-choices")
-    };
-
-    console.log("Selected choices:", choices); // You can replace this with email sending, webhook, etc.
-
-    selectionScreen.style.display = "none";
-    thankyouScreen.style.display = "block";
+Object.entries(choices).forEach(([id, items]) => {
+  const parent = document.getElementById(id);
+  items.forEach(({ title, image }) => {
+    const choiceElement = createChoiceElement(title, image);
+    parent.appendChild(choiceElement);
   });
 });
