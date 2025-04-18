@@ -98,3 +98,8 @@ h2 {
 .pixel-heart, .pixel-icon {
   vertical-align: middle;
 }
+
+.hidden {
+  display: none;
+}
+
