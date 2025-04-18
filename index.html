@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy 2 Years Anniversary</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="screen screen1">
-      <h1>Happy 2 Years Anniversary</h1>
-      <div class="hearts">
-        <img src="https://i.imgur.com/VB12aIB.png" class="pixel-heart" alt="Heart" />
-        <img src="https://i.imgur.com/VB12aIB.png" class="pixel-heart" alt="Heart" />
-      </div>
-      <p id="custom-message">[Your message here]</p>
-      <button class="enter-btn" onclick="nextScreen()">Enter</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Anniversary</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body style="font-family: 'Pixelify Sans', sans-serif;">
+  <div id="landing-screen" class="screen">
+    <h1>
+      <img src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" class="pixel-heart" style="height: 60px;" />
+      Happy 2 Years Anniversary
+      <img src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" class="pixel-heart" style="height: 60px;" />
+    </h1>
+    <p class="final-message">
+      Celebrating our anniversary would have been so much easier if distance weren’t an issue, but we’ve never let that stop us before. And even though I’m as broke as can be right now (Much like my girlfriend sometimes, my bank account’s giving me the silent treatment right now), I wanted to make this day meaningful in a special way. So instead of buying something, I decided to create something just for you—something out of the box to make this year memorable.<br><br>
+
+      My original plan was to use the last of my money to get you flowers and plan a nice dinner, because what’s an anniversary without flowers? But as much as I’d happily spend every last penny on you, I also knew it wouldn’t be a good idea if it meant going without food for the next two weeks. So, I was stuck—until I remembered a video I saw a while back about a guy who programmed a website to ask his girlfriend to be his Valentine’s. And I thought… maybe that’s it. Now, baby, let’s be real—I am no IT expert, but I do know me a little programming, and I figured this could be the perfect idea.<br><br>
+
+      Once the idea was there, all that was left was making it happen. For the past two weeks, I’ve been working on this project nonstop. And because I’m a perfectionist when it comes to you 😏, I wanted every little detail to be just right, which, of course, meant even more time and effort. But honestly? Doing this for you made all the work feel like fun. I just hope you can see how much thought and love I’ve put into this, even if I couldn’t get you a physical gift this year. You know, one of my biggest love languages is giving you things, and it really hurts that I couldn’t do that the way I wanted to. But I hope this shows you just how much you mean to me.<br><br>
+
+      <span class="bold">Yours, always</span>
+    </p>
+    <button id="start-btn" class="pixel-btn">
+      <img src="https://cdn.pixabay.com/photo/2024/07/03/18/57/start-8870688_1280.png" alt="Enter">
+    </button>
+  </div>
+
+  <div id="selection-screen" class="screen hidden">
+    <h1>
+      <img src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" class="pixel-heart" style="height: 60px;" />
+      Let’s customize our date together
+      <img src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" class="pixel-heart" style="height: 60px;" />
+    </h1>
+
+    <section>
+      <h2>Lunch Picks</h2>
+      <div class="subtext">I may not physically be there to cook these for you, but let this be the next best thing.</div>
+      <div class="choices" id="meal-choices"></div>
+    </section>
+
+    <section>
+      <h2>Sweet Treats</h2>
+      <div class="subtext">I may not be there to feed you dessert, but let this be my sugary promise.</div>
+      <div class="choices" id="dessert-choices"></div>
+    </section>
+
+    <section>
+      <h2>Watch List</h2>
+      <div class="subtext">I may not be there to hit ‘play’ for you, but pick a film, and let’s pretend I’m right there.</div>
+      <div class="choices" id="movie-choices"></div>
+    </section>
+
+    <section>
+      <h2>Game Night</h2>
+      <div class="subtext">I may not be there to properly 'distract' you, but pick a game and let's have fun.</div>
+      <div class="choices" id="game-choices"></div>
+    </section>
+
+    <div class="footer-button">
+      <button id="submit-btn" class="pixel-btn">
+        <img src="https://cdn.pixabay.com/photo/2024/07/03/18/57/start-8870688_1280.png" alt="Submit">
+      </button>
     </div>
+  </div>
 
-    <div class="screen screen2 hidden">
-      <h2>Let's customize our date together</h2>
+  <div id="thankyou-screen" class="screen hidden">
+    <h1>
+      <img src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" style="height: 60px;" class="pixel-icon" />
+      Thank You for Your Help in Perfecting Our Little Anniversary Date
+      <img src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" style="height: 60px;" class="pixel-icon" />
+    </h1>
+    <p class="subtext" style="font-size: 24px; font-weight: bold;">
+      Performance review complete: ‘Absout Wifey Material’ status confirmed. Reward: hand-touch privileges (claim upon physical contact).
+    </p>
+  </div>
 
-      <div class="choices">
-        <div class="category">
-          <h3>Meal</h3>
-          <div class="options">
-            <img src="https://i.imgur.com/GfqVAxW.png" data-choice="Homemade Pasta" />
-            <img src="https://i.imgur.com/Y5JXJws.png" data-choice="Noodles" />
-          </div>
-        </div>
-
-        <div class="category">
-          <h3>Dessert</h3>
-          <div class="options">
-            <img src="https://i.imgur.com/UsRQNuv.png" data-choice="Ice Cream" />
-            <img src="https://i.imgur.com/AhRhgWQ.png" data-choice="Biscuits" />
-          </div>
-        </div>
-
-        <div class="category">
-          <h3>Activity</h3>
-          <div class="options">
-            <div class="hover-box">
-              <img src="https://i.imgur.com/DiMKtTZ.png" data-choice="Movie" />
-              <div class="sub-options hidden">
-                <p data-sub="Whisper of the Heart">Whisper of the Heart</p>
-                <p data-sub="Spirited Away">Spirited Away</p>
-                <p data-sub="Howl's Moving Castle">Howl's Moving Castle</p>
-              </div>
-            </div>
-            <div class="hover-box">
-              <img src="https://i.imgur.com/iFuIhyX.png" data-choice="Games" />
-              <div class="sub-options hidden">
-                <p data-sub="R.E.P.O">R.E.P.O</p>
-                <p data-sub="Minecraft">Minecraft</p>
-                <p data-sub="Skribbl">Skribbl</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <button class="enter-btn" onclick="nextScreen()">Submit</button>
-    </div>
-
-    <div class="screen screen3 hidden">
-      <h2>Thank You!</h2>
-      <p>Your customized date has been saved 💖</p>
-      <img src="https://i.imgur.com/Dbhw0WM.png" alt="Thank you image" />
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
