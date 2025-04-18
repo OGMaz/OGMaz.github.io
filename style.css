@@ -1,6 +1,6 @@
 body {
   font-family: 'Pixelify Sans', sans-serif;
-  background-color: #fddde6;
+  background-color: #fff0f3;
   color: #000;
   margin: 0;
   padding: 20px;
@@ -28,13 +28,6 @@ h1 {
 .pixel-heart,
 .pixel-icon {
   height: 60px;
-}
-
-.pixel-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
 }
 
 .final-message {
@@ -70,7 +63,7 @@ h2 {
 .choice {
   border: 2px solid #000;
   padding: 10px;
-  background-color: #fff;
+  background-color: #ffe5ec;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -88,7 +81,7 @@ h2 {
 
 .choice:hover {
   transform: scale(1.05);
-  background-color: #ffeef2;
+  background-color: #ffccd5;
 }
 
 .footer-button {
@@ -97,4 +90,45 @@ h2 {
 
 .bold {
   font-weight: bold;
+}
+
+.button-55 {
+  align-self: center;
+  background-color: #ffc2d1;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 20px;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
