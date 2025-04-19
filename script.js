@@ -40,3 +40,17 @@ document.querySelectorAll(".sub-options p").forEach(p => {
     p.classList.add("selected");
   });
 });
+
+// Add button click functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const enterBtn = document.getElementById("enterBtn");
+  const submitBtn = document.getElementById("submitBtn");
+
+  if (enterBtn) {
+    enterBtn.addEventListener("click", nextScreen);
+  }
+
+  if (submitBtn) {
+    submitBtn.addEventListener("click", nextScreen);
+  }
+});
