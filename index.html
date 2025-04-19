@@ -1,85 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Anniversary Date Customizer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anniversary Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Page 1 -->
+
+  <!-- Screen 1 -->
   <div class="screen" id="screen1">
     <h1>
-      <img src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" class="pixel-heart">
+      <img class="pixel-heart" src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" />
       Happy 2 Years Anniversary
-      <img src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" class="pixel-heart">
+      <img class="pixel-heart" src="https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png" />
     </h1>
-    <p class="subtext">Let's make a date you'll never forget 💖</p>
-    <button class="button-55" id="enterBtn">Enter</button>
+    <p>Your custom intro message goes here!</p>
+    <button id="enterBtn" class="button-55">Enter</button>
   </div>
 
-  <!-- Page 2 -->
+  <!-- Screen 2 -->
   <div class="screen hidden" id="screen2">
     <h2>
-      <img src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" class="pixel-icon">
+      <img class="pixel-icon" src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" />
       Let's customize our date together
-      <img src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" class="pixel-icon">
+      <img class="pixel-icon" src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" />
     </h2>
 
-    <section>
-      <h3>Meal</h3>
-      <div class="choices" id="mealChoices">
-        <div class="choice" data-category="meal" data-value="Pasta">
-          <span class="choice-title">Pasta</span>
-          <img src="images/pasta.png" alt="Pasta">
-        </div>
-        <div class="choice" data-category="meal" data-value="Noodles">
-          <span class="choice-title">Noodles</span>
-          <img src="images/noodles.png" alt="Noodles">
-        </div>
+    <div class="subtext">Choose your favorite options below</div>
+
+    <section class="category">
+      <h3 class="choice-title">Meal</h3>
+      <div class="choices">
+        <div class="choice"><img src="meal1.png" alt="Meal" data-choice="Meal1"></div>
+        <div class="choice"><img src="meal2.png" alt="Meal" data-choice="Meal2"></div>
       </div>
     </section>
 
-    <section>
-      <h3>Dessert</h3>
-      <div class="choices" id="dessertChoices">
-        <div class="choice" data-category="dessert" data-value="Ice Cream">
-          <span class="choice-title">Ice Cream</span>
-          <img src="images/icecream.png" alt="Ice Cream">
-        </div>
-        <div class="choice" data-category="dessert" data-value="Biscuits">
-          <span class="choice-title">Biscuits</span>
-          <img src="images/biscuits.png" alt="Biscuits">
-        </div>
+    <section class="category">
+      <h3 class="choice-title">Dessert</h3>
+      <div class="choices">
+        <div class="choice"><img src="dessert1.png" alt="Dessert" data-choice="Dessert1"></div>
+        <div class="choice"><img src="dessert2.png" alt="Dessert" data-choice="Dessert2"></div>
       </div>
     </section>
 
-    <section>
-      <h3>Activity</h3>
-      <div class="choices" id="activityChoices">
-        <div class="choice" data-category="activity" data-value="Movie">
-          <span class="choice-title">Movie</span>
-          <img src="images/movie.png" alt="Movie">
+    <section class="category">
+      <h3 class="choice-title">Activity</h3>
+      <div class="choices">
+        <div class="choice hover-box">
+          <img src="activity1.png" alt="Movie" data-choice="Movie">
+          <div class="sub-options hidden">
+            <p data-sub="R.E.P.O">R.E.P.O</p>
+            <p data-sub="Minecraft">Minecraft</p>
+            <p data-sub="Skribbl">Skribbl</p>
+          </div>
         </div>
-        <div class="choice" data-category="activity" data-value="Games">
-          <span class="choice-title">Games</span>
-          <img src="images/games.png" alt="Games">
-        </div>
+        <div class="choice"><img src="activity2.png" alt="Game" data-choice="Game"></div>
       </div>
     </section>
 
-    <button class="button-55" id="submitBtn">Submit</button>
+    <button id="submitBtn" class="button-55">Submit</button>
   </div>
 
-  <!-- Page 3 -->
+  <!-- Screen 3 -->
   <div class="screen hidden" id="screen3">
     <h2>
-      <img src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" class="pixel-icon">
+      <img class="pixel-icon" src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" />
       Thank You for Your Help!
-      <img src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" class="pixel-icon">
+      <img class="pixel-icon" src="https://www.citypng.com/public/uploads/preview/pixel-fire-flame-icon-png-7017516949611451kaejh8zsb.png" />
     </h2>
+
     <div class="final-message">
-      <p class="animated-subtext">Your perfect date is ready! Get ready for the best night ever 🌟</p>
+      <p class="animated-subtext">Your choices are locked in! Get ready for a magical anniversary date ✨</p>
     </div>
   </div>
 
