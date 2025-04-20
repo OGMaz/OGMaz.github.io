@@ -8,7 +8,7 @@ body {
   text-align: center;
   background-image: url('https://i.postimg.cc/SxXj0jTt/kindpng-7779182.png');
   background-repeat: repeat;
-  background-size: auto; /* Optional: keep the original size */
+  background-size: 100px; /* Optional: keep the original size */
    /* keep your existing styles */
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
