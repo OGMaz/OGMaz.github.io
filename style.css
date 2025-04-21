@@ -106,20 +106,34 @@ h2 {
   background-color: #ff0000;
 }
 
-.fire-header {
+.fire-line {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
+  flex-wrap: wrap; /* Helps on small screens */
+  padding: 20px;
   text-align: center;
+}
+
+.fire-text {
+  font-size: 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  max-width: 80vw;
 }
 
 .flame-icon {
   width: 40px;
   height: auto;
-  vertical-align: middle;
+  animation: flame-flicker 0.8s infinite ease-in-out;
 }
+
+@keyframes flame-flicker {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(-3deg) scale(1.1); }
+}
+
 
 .footer-button {
   margin-top: 30px;
