@@ -106,6 +106,13 @@ h2 {
   background-color: #ff0000;
 }
 
+.choice.selected {
+  border-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+  transform: scale(1.08);
+}
+
+
 .fire-line {
   display: flex;
   align-items: center;
