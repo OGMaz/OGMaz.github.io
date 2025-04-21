@@ -54,3 +54,28 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.addEventListener("click", nextScreen);
   }
 });
+
+// Store selections
+const selections = {};
+
+// Select all choices
+document.querySelectorAll('.choice').forEach(choice => {
+  choice.addEventListener('click', () => {
+    // Remove "selected" class from siblings
+    const parent = choice.parentElement;
+    parent.querySelectorAll('.choice').forEach(sibling => {
+      sibling.classList.remove('selected');
+    });
+
+    // Add selected style
+    choice.classList.add('selected');
+
+    // Save selection
+    const category = choice.dataset.category;
+    const value = choice.dataset.choice;
+    selections[category] = value;
+
+    console.log(selections); // You can use this later to display or send data
+  });
+});
+
