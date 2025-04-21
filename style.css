@@ -85,7 +85,7 @@ h2 {
 .choice {
   border: 2px solid #000;
   padding: 10px;
-  background-color: #ffe5ec;
+  background-color: #f8c8dc;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -103,7 +103,7 @@ h2 {
 
 .choice:hover {
   transform: scale(1.05);
-  background-color: #ffccd5;
+  background-color: #ff0000;
 }
 
 .flame-icon {
