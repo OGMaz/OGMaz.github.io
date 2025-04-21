@@ -106,8 +106,17 @@ h2 {
   background-color: #ff0000;
 }
 
+.fire-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-align: center;
+}
+
 .flame-icon {
-  width: 30px;
+  width: 40px;
   height: auto;
   vertical-align: middle;
 }
