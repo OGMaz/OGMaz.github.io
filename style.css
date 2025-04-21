@@ -222,7 +222,7 @@ h2 {
 }
 
 .rainbow-border {
-  display: inline-block;
+  display: block;
   padding: 20px;
   margin: 30px auto;
   font-size: 16px;
@@ -241,12 +241,12 @@ h2 {
     rgb(255, 85, 85) 40px -40px;
   max-width: 600px;
   text-align: center;
+  overflow: visible;
 }
 
-/* Typewriter effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 60ch } /* enough characters to fit full sentence */
 }
 
 .typewriter {
@@ -254,8 +254,9 @@ h2 {
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid #ff69b4;
-  width: 0;
   animation: typing 4s steps(60, end) forwards;
+  max-width: 100%;
 }
+
 
 
