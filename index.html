@@ -96,35 +96,6 @@
     <p class="subtext">Performance review complete: ‘Absout Wifey Material’ status confirmed. Reward: hand-touch privileges (claim upon physical contact).</p>
       </div>
   </div>
-<!-- Inline script to handle selections -->
-<script>
-  // Store selections
-  const selections = {};
-
-  // Select all choices
-  document.querySelectorAll('.choice').forEach(choice => {
-    choice.addEventListener('click', () => {
-      // Remove "selected" class from siblings
-      const parent = choice.parentElement;
-      parent.querySelectorAll('.choice').forEach(sibling => {
-        sibling.classList.remove('selected');
-      });
-
-      // Add selected style
-      choice.classList.add('selected');
-
-      // Save selection
-      const category = choice.dataset.category;
-      const value = choice.dataset.choice;
-      selections[category] = value;
-
-      console.log(selections); // You can use this later to display or send data
-    });
-  });
-</script>
-
-<!-- Your main JS file -->
-<script src="script.js"></script>
 
   <script src="script.js"></script>
 </body>
