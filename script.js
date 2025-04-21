@@ -79,3 +79,16 @@ document.querySelectorAll('.choice').forEach(choice => {
   });
 });
 
+// When screen3 is shown, add the typewriter animation to the paragraph
+function showScreen3() {
+  // Hide all screens
+  document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
+
+  // Show the third screen
+  document.getElementById('screen3').classList.remove('hidden');
+
+  // Add typewriter class to the subtext
+  const subtext = document.querySelector('.subtext');
+  subtext.classList.add('typewriter');
+}
+
