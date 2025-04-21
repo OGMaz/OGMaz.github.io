@@ -106,6 +106,12 @@ h2 {
   background-color: #ffccd5;
 }
 
+.flame-icon {
+  width: 30px;
+  height: auto;
+  vertical-align: middle;
+}
+
 .footer-button {
   margin-top: 30px;
 }
