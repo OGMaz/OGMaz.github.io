@@ -79,16 +79,22 @@ document.querySelectorAll('.choice').forEach(choice => {
   });
 });
 
-// When screen3 is shown, add the typewriter animation to the paragraph
-function showScreen3() {
-  // Hide all screens
+// Show screen 3 and animate the final paragraph
+function showFinalScreen() {
+  // Hide all screens (optional, if you're navigating between them)
   document.querySelectorAll('.screen').forEach(screen => screen.classList.add('hidden'));
 
-  // Show the third screen
-  document.getElementById('screen3').classList.remove('hidden');
+  // Show the final screen
+  const finalScreen = document.querySelector('#screen3');
+  finalScreen.classList.remove('hidden');
 
-  // Add typewriter class to the subtext
-  const subtext = document.querySelector('.subtext');
+  // Animate the text
+  const subtext = finalScreen.querySelector('.subtext');
+  subtext.classList.remove('typewriter'); // Reset if it was added before
+  void subtext.offsetWidth; // Trigger reflow to restart animation
   subtext.classList.add('typewriter');
 }
+
+// Example trigger (replace this with your real navigation trigger)
+document.querySelector('#final-enter-button')?.addEventListener('click', showFinalScreen);
 
