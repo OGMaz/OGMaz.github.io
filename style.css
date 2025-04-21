@@ -110,17 +110,17 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap; /* Helps on small screens */
-  padding: 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 65px;
   text-align: center;
 }
 
 .fire-text {
-  font-size: 1.2rem;
-  font-family: 'Press Start 2P', cursive;
+  font-size: 45px;
+  font-family: 'Pixelify Sans', sans-serif;
+  text-shadow: 0 0 black;
   margin: 0;
-  max-width: 80vw;
 }
 
 .flame-icon {
